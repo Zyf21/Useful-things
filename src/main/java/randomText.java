@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class split {
+public class randomText {
     public static void main(String[] args) throws IOException, DocumentException {
 
         String test = "5.5 cord complication,ADVPARAMEDIC,EMRGMEDICALTECH,PARAMEDIC";

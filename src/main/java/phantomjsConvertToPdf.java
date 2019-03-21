@@ -24,7 +24,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 
-public class addImage {
+public class phantomjsConvertToPdf {
     public static void main(String args[]) throws Exception, DocumentException {
 
         String SCRIPT = "var page = require('webpage').create();\n" +

@@ -15,7 +15,6 @@ public class createHtml {
         FileUtils.writeStringToFile(htmlTemplateFile, htmlString);
 
         Path file = Paths.get("pdfBox/fff.html");
-
         try (PrintWriter out = new PrintWriter(String.valueOf(file))) {
             out.println(htmlString);
         }
