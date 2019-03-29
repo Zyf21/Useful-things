@@ -25,12 +25,23 @@ public class itextConvertStringToPdf {
         Paragraph paragraph1 = new Paragraph(para1);
         paragraph1.setAlignment(Element.ALIGN_CENTER);
         Paragraph paragraph2 = new Paragraph(para2);
-
         document.add(paragraph1);
         document.add(paragraph2);
-
         document.close();
-
         System.out.println( "файл Создан" );
+
+
+        Document document2 = new Document();
+        PdfWriter.getInstance(document, new FileOutputStream("sample1.pdf"));
+        document2.open();
+        Image img = Image.getInstance("lis.png");
+        img.scaleAbsolute(300f, 400f);
+        document2.add(new Paragraph("Sample 1: This is simple image demo."));
+        document2.add(img);
+        document2.close();
+        System.out.println("Done");
+
+
+
     }
 }

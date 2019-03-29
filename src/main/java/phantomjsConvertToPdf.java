@@ -29,43 +29,34 @@ public class phantomjsConvertToPdf {
 
         String SCRIPT = "var page = require('webpage').create();\n" +
                 "page.open('@@URL@@', function() {\n" +
-                "page.viewportSize = { width: 360, height: 530 };\n"+
-                "  page.render('@@FILE@@');\n" +
+                //"page.paperSize = { format: 'A4',  orientation: 'portrait', margin: '0cm' };\n"+
+                //"page.paperSize = { width: 360, height: 530};\n"+
+                "page.paperSize = { width: 790, height: 1125};\n"+
+                //"page.dpi=150;\n"+
+                 //"page.viewportSize = { width: 360, height: 530 };\n"+
+                //"page.zoomFactor = 4 ;\n"+
+               // "page.clipRect = { top: 0, left: 0, width: 1024, height: 768 };\n"+
+                "page.render('@@FILE@@');\n" +
                 "});\n";
 
-        final String script = SCRIPT.replace("@@URL@@", "444.html").replace("@@FILE@@", "не пупыркки.pdf");
+        final String script = SCRIPT.replace("@@URL@@", "test3.html").replace("@@FILE@@", "чистый.pdf");
         System.setProperty("phantomjs.binary.path", "C:\\Users\\DMTech\\Downloads\\tt\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe");
         WebDriver driver = new PhantomJSDriver();
         ((PhantomJSDriver) driver).executePhantomJS(script);
 
         //take image
-        driver.get("test1.html");
-        driver.manage().window().setPosition(new Point(0,0));
-        driver.manage().window().setSize(new Dimension(1400,2500));
-        ((PhantomJSDriver) driver).executeScript("document.body.style.zoom = '5'");
-        WebElement html = driver.findElement(By.tagName("html"));
-        html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
+//        driver.get("test1.html");
+//        driver.manage().window().setPosition(new Point(0,0));
+//        driver.manage().window().setSize(new Dimension(1400,2500));
+//        ((PhantomJSDriver) driver).executeScript("document.body.style.zoom = '5'");
+//        WebElement html = driver.findElement(By.tagName("html"));
+//        html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
 
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("image/screenshot.png"));
+        System.out.println("Нормалек");
 
 
-
-
-
-
-
-
-
-        Document document = new Document();
-        PdfWriter.getInstance(document, new FileOutputStream("sample1.pdf"));
-        document.open();
-        Image img = Image.getInstance("lis.png");
-        img.scaleAbsolute(300f, 400f);
-        document.add(new Paragraph("Sample 1: This is simple image demo."));
-        document.add(img);
-        document.close();
-        System.out.println("Done");
     }
 }
 
