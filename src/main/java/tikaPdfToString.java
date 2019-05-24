@@ -7,12 +7,12 @@ import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.pdf.PDFParser;
 import org.apache.tika.sax.BodyContentHandler;
 
-public class pdfToString {
+public class tikaPdfToString {
     public static void main(String[] args) throws Exception {
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
         FileInputStream inputstream = new FileInputStream(new File(
-                "pdfFiles/test1.pdf"));
+                "pdfFiles/test5.pdf"));
 
         ParseContext pcontext = new ParseContext();
 
