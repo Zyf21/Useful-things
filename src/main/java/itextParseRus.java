@@ -18,7 +18,7 @@ public class itextParseRus {
     }
 
     public static String extractPdfText() throws IOException {
-        PdfReader pdfReader = new PdfReader("pdfFiles/test5.pdf");
+        PdfReader pdfReader = new PdfReader("pdfFiles/test7.pdf");
         int pages = pdfReader.getNumberOfPages();
         String pdfText = "";
         for (int ctr = 1; ctr < pages + 1; ctr++) {

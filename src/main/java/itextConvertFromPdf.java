@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class itextConvertFromPdf {
 
-    public static final String SRC = "pdfFiles/test2.pdf";
+    public static final String SRC = "pdfFiles/test6.pdf";
 
     class FontRenderFilter extends RenderFilter {
         public boolean allowText(TextRenderInfo renderInfo) {
@@ -28,7 +28,8 @@ public class itextConvertFromPdf {
 
     public void parse(String filename) throws IOException {
         PdfReader reader = new PdfReader(filename);
-        Rectangle rect = new Rectangle(0, 0, 50, 260);
+        Rectangle rect = new Rectangle(0, 0, 100, 985);
+      //  Rectangle rect = new Rectangle(0, 0, 50, 260);
         RenderFilter regionFilter = new RegionTextRenderFilter(rect);
         FontRenderFilter fontFilter = new FontRenderFilter();
         TextExtractionStrategy strategy = new FilteredTextRenderListener(new LocationTextExtractionStrategy(), regionFilter);

@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Useful-things" />
         <module name="com" />
         <module name="TestBack" />
+        <module name="Useful-things" />
       </profile>
     </annotationProcessing>
   </component>
