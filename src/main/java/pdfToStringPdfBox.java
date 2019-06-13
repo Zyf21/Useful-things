@@ -36,7 +36,7 @@ public class pdfToStringPdfBox {
 
              String string = null;
 
-            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File("pdfFiles/test7.pdf"), "r"));
+            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File("pdfFiles/12.pdf"), "r"));
             pdfParser.parse();
             PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
             PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();

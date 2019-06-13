@@ -11,7 +11,7 @@ import com.itextpdf.text.pdf.parser.TextRenderInfo;
 
 import java.io.IOException;
 
-public class itextConvertFromPdf {
+public class itextConvertFromPdfRectangle {
 
     public static final String SRC = "pdfFiles/test6.pdf";
 
@@ -23,7 +23,7 @@ public class itextConvertFromPdf {
     }
 
     public static void main(String[] args) throws IOException, DocumentException {
-        new itextConvertFromPdf().parse(SRC);
+        new itextConvertFromPdfRectangle().parse(SRC);
     }
 
     public void parse(String filename) throws IOException {
