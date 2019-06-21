@@ -20,7 +20,7 @@ public class itextParseHard {
 
        // new itextParseHard().extractText("pdfFiles/test3.pdf","pdfFiles/test33.txt");
 
-        new itextParseHard().parsePdf("pdfFiles/test3.pdf","pdfFiles/test33.txt");
+        new itextParseHard().parsePdf("pdfFiles/test2.pdf","pdfFiles/test33.txt");
 
 
 

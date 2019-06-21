@@ -1,11 +1,21 @@
+import java.awt.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLOutput;
+import java.util.ArrayList;
+import java.util.List;
 
 import io.github.jonathanlink.PDFLayoutTextStripper;
 import org.apache.pdfbox.io.RandomAccessFile;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.encryption.InvalidPasswordException;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.text.PDFTextStripperByArea;
+
 public class pdfToStringPdfBox {
 
     public static void main(String args[]) throws IOException {
@@ -33,23 +43,64 @@ public class pdfToStringPdfBox {
 //        System.out.println(text);
 //        doc.close();
 
+        try (PDDocument document = PDDocument.load(new File("pdfFiles/12.pdf"))) {
+
+            if (!document.isEncrypted()) {
+
+                PDFTextStripperByArea stripper = new PDFTextStripperByArea();
+                stripper.setSortByPosition(true);
+                Rectangle rect = new Rectangle(10, 60, 900, 840);
+                stripper.addRegion("class1", rect);
+                PDPage firstPage = document.getPage(0);
+                stripper.extractRegions( firstPage );
+              //  System.out.println("Text in the area:" + rect);
+              //  System.out.println(stripper.getTextForRegion( "class1"));
+
+            }
+        } catch (IOException e){
+            System.err.println("Exception while trying to read pdf document - " + e);
+        }
+
+
+
+
 
              String string = null;
 
-            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File("pdfFiles/12.pdf"), "r"));
+            PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File("pdfFiles/test5.pdf"), "r"));
             pdfParser.parse();
             PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
             PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
+
             string = pdfTextStripper.getText(pdDocument);
-
-            System.out.println(pdfTextStripper.getText(pdDocument));
-
-
-
-
-
-
-
+          //  System.out.println(string);
+            parsePDF("pdfFiles/test111.pdf",6,7);
 
     }
+
+            public  static  void parsePDF (String filePath, int startPage, int endPage) throws IOException {
+
+                String string = null;
+                PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File(filePath), "r"));
+                pdfParser.parse();
+                PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
+                PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
+                pdfTextStripper.setStartPage(startPage);
+                pdfTextStripper.setEndPage(endPage);
+                string = pdfTextStripper.getText(pdDocument);
+                PrintWriter out = new PrintWriter("pdfFilesString/test.txt");
+                out.write(string);
+                out.close();
+                System.out.println(string);
+
+
+            }
+
+
+
+
+
+
+
+
 }
