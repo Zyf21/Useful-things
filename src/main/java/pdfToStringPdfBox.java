@@ -3,6 +3,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,12 +76,13 @@ public class pdfToStringPdfBox {
             PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
 
             string = pdfTextStripper.getText(pdDocument);
-          //  System.out.println(string);
-            parsePDF("pdfFiles/test111.pdf",6,7);
+            //  System.out.println(string);
+
+            System.out.println(parsePDF("pdfFiles/test111.pdf",6,7));
 
     }
 
-            public  static  void parsePDF (String filePath, int startPage, int endPage) throws IOException {
+            public  static String parsePDF (String filePath, int startPage, int endPage) throws IOException {
 
                 String string = null;
                 PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File(filePath), "r"));
@@ -88,11 +92,14 @@ public class pdfToStringPdfBox {
                 pdfTextStripper.setStartPage(startPage);
                 pdfTextStripper.setEndPage(endPage);
                 string = pdfTextStripper.getText(pdDocument);
-                PrintWriter out = new PrintWriter("pdfFilesString/test.txt");
+
+
+                Path tempDir = Files.createTempDirectory(Paths.get("tempPDF/"), "pdf");
+                PrintWriter out = new PrintWriter(tempDir + "/test.txt");
                 out.write(string);
                 out.close();
-                System.out.println(string);
-
+              //  System.out.println(string);
+                return tempDir + "/test.txt";
 
             }
 
