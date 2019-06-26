@@ -84,19 +84,19 @@ public class pdfToStringPdfBox {
 
             public  static String parsePDF (String filePath, int startPage, int endPage) throws IOException {
 
-                String string = null;
+                String pdfText = null;
                 PDFParser pdfParser = new PDFParser(new RandomAccessFile(new File(filePath), "r"));
                 pdfParser.parse();
                 PDDocument pdDocument = new PDDocument(pdfParser.getDocument());
                 PDFTextStripper pdfTextStripper = new PDFLayoutTextStripper();
                 pdfTextStripper.setStartPage(startPage);
                 pdfTextStripper.setEndPage(endPage);
-                string = pdfTextStripper.getText(pdDocument);
-
+                pdfText = pdfTextStripper.getText(pdDocument);
+                pdDocument.close();
 
                 Path tempDir = Files.createTempDirectory(Paths.get("tempPDF/"), "pdf");
                 PrintWriter out = new PrintWriter(tempDir + "/test.txt");
-                out.write(string);
+                out.write(pdfText);
                 out.close();
               //  System.out.println(string);
                 return tempDir + "/test.txt";
