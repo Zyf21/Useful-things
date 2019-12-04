@@ -34,6 +34,9 @@ public class HttpGetEx {
 			System.out.println(sc.nextLine());
 
 		}
+		//34534534534534534
 
+		System.out.println(sc.nextLine());
+		System.out.println(sc.nextLine());System.out.println(sc.nextLine());System.out.println(sc.nextLine());
 	}
 }
