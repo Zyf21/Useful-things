@@ -12,7 +12,7 @@ public class tikaPdfToString {
         BodyContentHandler handler = new BodyContentHandler();
         Metadata metadata = new Metadata();
         FileInputStream inputstream = new FileInputStream(new File(
-                "pdfFiles/test5.pdf"));
+                "pdfFiles/test6.pdf"));
 
         ParseContext pcontext = new ParseContext();
 
