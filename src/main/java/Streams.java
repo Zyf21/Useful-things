@@ -147,6 +147,8 @@ public class Streams {
 //		return files.length == 0;
 //	}
 
+
+
 	public static boolean checkForFiles(String path) {
 		File directory = new File(path);
 		String[] files = directory.list();
