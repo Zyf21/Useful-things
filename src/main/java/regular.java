@@ -1,3 +1,4 @@
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -39,6 +40,8 @@ public class regular {
 
         if(matcher.find()){
             System.out.println("horoso");
+            String uniqueID = UUID.randomUUID().toString();
+            System.out.println(uniqueID);
         }else {
             System.out.println("ploho");
         }

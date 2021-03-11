@@ -1,5 +1,4 @@
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +8,8 @@ import java.nio.file.Paths;
 
 public class createHtml {
     public static void main(String[] args) throws IOException {
+
+
 
         File htmlTemplateFile = new File("template.html");
         String htmlString = "sdfsdfsdf";
