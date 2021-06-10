@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+<name>Images from 2012-04-19T03:00:00Z UTC to 2012-04-19T03:00:00Z UTC</name>
+<open>1</open>
+<Folder>
+<name>Channel 1</name>
+<GroundOverlay>
+<LookAt>
+<heading>0</heading>
+<latitude>10.00</latitude>
+<longitude>96.00</longitude>
+<tilt>0</tilt>
+</LookAt>
+<name>2012-04-19T03:00:00Z</name>
+<visibility>0</visibility>
+<Icon>
+<href>http://tt.jpg</href>
+</Icon>
+<LatLonBox>
+<north>25</north>
+<south>-5</south>
+<east>116</east>
+<west>76</west>
+</LatLonBox>
+<TimeSpan>
+<begin>2012-04-19T02:00:00Z</begin>
+<end>2012-04-19T03:00:00Z</end>
+</TimeSpan>
+</GroundOverlay>
+</Folder>
+</Document>

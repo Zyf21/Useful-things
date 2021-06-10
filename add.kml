@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+<Document>
+  <!-- Begin Style Definitions -->
+  <Style id="line1">
+    <LineStyle>
+      <color>FF0000FF</color>
+      <width>4</width>
+    </LineStyle>
+    <IconStyle><Icon></Icon></IconStyle>
+  </Style>
+  <Style id="point1">
+    <IconStyle><Icon>kml_ext_files/kml_symbol_dot_0.png</Icon></IconStyle>
+  </Style>
+  <Folder>
+    <name>Point Features</name>
+    <description>Point Features</description>
+    <Placemark>
+      <description>Unknown Point Feature</description>
+      <name>AD DHUBBAT</name>
+      <styleUrl>#point1</styleUrl>
+      <Point>
+        <coordinates>46.7192080800,24.6805492338,0</coordinates>
+      </Point>
+    </Placemark>
+  </Folder>
+  <Folder>
+    <name>Line Features</name>
+    <description>Line Features</description>
+    <Placemark>
+      <description>Unknown Line Type</description>
+      <styleUrl>#line1</styleUrl>
+      <LineString>
+        <coordinates>
+          46.7180344800,24.6924410640,0
+          46.7232062400,24.6935325345,0
+          46.7286912000,24.6707488452,0
+          46.7288481600,24.6702740011,0
+          46.7277508800,24.6697044474,0
+          46.7282210400,24.6689448203,0
+          46.7280122400,24.6668561492,0
+          46.7184524400,24.6670458960,0
+          46.7188704000,24.6744989548,0
+          46.7179300800,24.6926309355,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Folder>
+</Document>
+</kml>

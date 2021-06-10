@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document><Placemark><name>AZ ZAHRA</name>
+<description>Unknown Point Feature</description><ExtendedData>
+<Data name="name"><value>AZ ZAHRA</value>
+</Data><Data name="styleUrl">
+<value>#point1</value></Data><Data name="styleHash">
+<value>df4b0e</value></Data><Data name="description">
+<value>Unknown Point Feature</value></Data></ExtendedData>
+<Point><coordinates>46.72714248,24.6849032133,0</coordinates></Point>
+</Placemark>
+<Placemark>
+<description>Unknown Line Type</description>
+<ExtendedData>
+<Data name="styleUrl">
+<value>#line1</value>
+</Data><Data name="styleHash">
+<value>-3e3c90e</value>
+</Data><Data name="description">
+<value>Unknown Line Type</value>
+</Data>
+</ExtendedData>
+<LineString>
+<coordinates>46.72310184,24.6934218179,0 46.73135556,24.6950828837,0 46.7332884,24.6868718645,0 46.7380944,24.6850682364,0 46.74086316,24.6819353763,0 46.72654956,24.678897629,0 46.72310184,24.6934218179,0</coordinates>
+</LineString>
+</Placemark>
+</Document>
+</kml>

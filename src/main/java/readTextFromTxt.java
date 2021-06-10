@@ -1,7 +1,6 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class readTextFromTxt {
 
@@ -26,11 +25,11 @@ public class readTextFromTxt {
         }
 
 
-        String file ="text.txt";
-        DataInputStream reader = new DataInputStream(new FileInputStream(file));
-        String result = reader.readUTF();
-        reader.close();
-        System.out.println(result);
+//        String file ="text.txt";
+//        DataInputStream reader = new DataInputStream(new FileInputStream(file));
+//        String result = reader.readUTF();
+//        reader.close();
+//        System.out.println(result);
 
     }
 }
